@@ -1,0 +1,83 @@
+openapi: 3.0.4
+info:
+  title: Stock Exchange
+  description: >-
+    Stock Exchange is a tool for retrieving information about stock exchanges
+    and trading venues worldwide using ISO 10383 Market Identifier Codes (MIC).
+    It returns exchange details including name, location, website, and
+    classification.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/stockexchange:
+    get:
+      summary: Lookup by MIC Code
+      description: Get stock exchange details by its Market Identifier Code (MIC).
+      operationId: stockexchange
+      parameters:
+        - name: mic
+          in: query
+          schema:
+            type: string
+          required: true
+          description: >-
+            The 4-character Market Identifier Code (e.g., XNYS for NYSE, XNAS
+            for NASDAQ)
+          example: XNYS
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  count: 1
+                  exchanges:
+                    - mic: XNYS
+                      operatingMic: XNYS
+                      type: OPRT
+                      name: NEW YORK STOCK EXCHANGE, INC.
+                      acronym: NYSE
+                      category: RMKT
+                      country: US
+                      city: NEW YORK
+                      website: WWW.NYSE.COM
+                      lei: 549300HIIRNWMO0MKS45
+                      creationDate: '2005-05-23'
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
