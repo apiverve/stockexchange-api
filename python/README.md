@@ -226,8 +226,9 @@ from apiverve_stockexchange.apiClient import StockexchangeAPIClient
 
 api = StockexchangeAPIClient("[YOUR_API_KEY]")
 
+query = { "mic": "XNYS" }
+
 try:
-    query = { "mic": "XNYS" }
     result = api.execute(query)
     print(result)
 finally:
