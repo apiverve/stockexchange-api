@@ -4,26 +4,43 @@ declare module '@apiverve/stockexchange' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface stockexchangeResponse {
     status: string;
     error: string | null;
     data: StockExchangeData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface StockExchangeData {
-      mic:          string;
-      operatingMic: string;
-      type:         string;
-      name:         string;
-      acronym:      string;
-      category:     string;
-      country:      string;
-      city:         string;
-      website:      string;
-      lei:          string;
-      creationDate: Date;
+      count:     number | null;
+      exchanges: Exchange[];
+  }
+  
+  interface Exchange {
+      mic:          null | string;
+      operatingMic: null | string;
+      type:         null | string;
+      name:         null | string;
+      acronym:      null | string;
+      category:     null | string;
+      country:      null | string;
+      city:         null | string;
+      website:      null | string;
+      lei:          null | string;
+      creationDate: Date | null;
   }
 
   export default class stockexchangeWrapper {
