@@ -122,17 +122,22 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "mic": "XNYS",
-    "operatingMic": "XNYS",
-    "type": "OPRT",
-    "name": "NEW YORK STOCK EXCHANGE, INC.",
-    "acronym": "NYSE",
-    "category": "RMKT",
-    "country": "US",
-    "city": "NEW YORK",
-    "website": "WWW.NYSE.COM",
-    "lei": "549300HIIRNWMO0MKS45",
-    "creationDate": "2005-05-23"
+    "count": 1,
+    "exchanges": [
+      {
+        "mic": "XNYS",
+        "operatingMic": "XNYS",
+        "type": "OPRT",
+        "name": "NEW YORK STOCK EXCHANGE, INC.",
+        "acronym": "NYSE",
+        "category": "RMKT",
+        "country": "US",
+        "city": "NEW YORK",
+        "website": "WWW.NYSE.COM",
+        "lei": "549300HIIRNWMO0MKS45",
+        "creationDate": "2005-05-23"
+      }
+    ]
   }
 }
 ```
