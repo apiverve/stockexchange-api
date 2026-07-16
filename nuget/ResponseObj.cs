@@ -25,9 +25,21 @@ namespace APIVerve.API.StockExchange
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
+    {
+        [JsonProperty("count")]
+        public long? Count { get; set; }
+
+        [JsonProperty("exchanges")]
+        public Exchange[] Exchanges { get; set; }
+    }
+
+    public partial class Exchange
     {
         [JsonProperty("mic")]
         public string Mic { get; set; }
@@ -60,6 +72,18 @@ namespace APIVerve.API.StockExchange
         public string Lei { get; set; }
 
         [JsonProperty("creationDate")]
-        public DateTimeOffset CreationDate { get; set; }
+        public DateTimeOffset? CreationDate { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
