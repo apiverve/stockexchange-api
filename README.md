@@ -1,13 +1,13 @@
-# [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Stock Exchange is a tool for retrieving information about stock exchanges and trading venues worldwide using ISO 10383 Market Identifier Codes (MIC). It returns exchange details including name, location, website, and classification.
+Stock Exchange identifies trading venues worldwide by Market Identifier Code, name, or country. It provides official exchange names, acronyms, host cities, websites, and founding dates, while paid plans add regulatory MIC and LEI identifiers.
 
 The Stock Exchange API provides a simple, reliable way to integrate stock exchange functionality into your applications. Built for developers who need production-ready stock exchange capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/stockexchange-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/stockexchange](https://docs.apiverve.com/ref/stockexchange)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,43 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Stock Exchange API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "count": 1,
+    "exchanges": [
+      {
+        "mic": "XNYS",
+        "operatingMic": "XNYS",
+        "type": "OPRT",
+        "name": "NEW YORK STOCK EXCHANGE, INC.",
+        "acronym": "NYSE",
+        "category": "RMKT",
+        "country": "US",
+        "city": "NEW YORK",
+        "website": "WWW.NYSE.COM",
+        "lei": "549300HIIRNWMO0MKS45",
+        "creationDate": "2005-05-23"
+      }
+    ]
+  }
 }
 ```
 
@@ -203,7 +235,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Stock Exchange API](https://apiverve.com/marketplace/stockexchange?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

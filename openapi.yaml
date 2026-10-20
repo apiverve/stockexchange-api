@@ -2,10 +2,10 @@ openapi: 3.0.4
 info:
   title: Stock Exchange
   description: >-
-    Stock Exchange is a tool for retrieving information about stock exchanges
-    and trading venues worldwide using ISO 10383 Market Identifier Codes (MIC).
-    It returns exchange details including name, location, website, and
-    classification.
+    Stock Exchange identifies trading venues worldwide by Market Identifier
+    Code, name, or country. It provides official exchange names, acronyms, host
+    cities, websites, and founding dates, while paid plans add regulatory MIC
+    and LEI identifiers.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -20,7 +20,7 @@ servers:
 paths:
   /v1/stockexchange:
     get:
-      summary: Lookup by MIC Code
+      summary: Stock Exchange
       description: Get stock exchange details by its Market Identifier Code (MIC).
       operationId: stockexchange
       parameters:
