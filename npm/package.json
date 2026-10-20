@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/stockexchange",
-  "version": "1.2.0",
-  "description": "Stock Exchange is a tool for retrieving information about stock exchanges and trading venues worldwide using ISO 10383 Market Identifier Codes (MIC). It returns exchange details including name, location, website, and classification.",
+  "version": "1.2.2",
+  "description": "Stock Exchange identifies trading venues worldwide by Market Identifier Code, name, or country. It provides official exchange names, acronyms, host cities, websites, and founding dates, while paid plans add regulatory MIC and LEI identifiers.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/stockexchange-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/stockexchange?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/stockexchange?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
